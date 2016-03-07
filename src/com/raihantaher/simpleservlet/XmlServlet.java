@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet(description = "This is XML Servlet", urlPatterns = {"/XmlServletPath"})
 public class XmlServlet extends HttpServlet {
@@ -21,9 +22,16 @@ public class XmlServlet extends HttpServlet {
 		
 		String userName = request.getParameter("username");
 		
+		HttpSession session = request.getSession();
+		
+		if(userName != "" && userName != null)
+		{
+			session.setAttribute("username_session", userName);
+		}
+		
 		PrintWriter writer = response.getWriter();
 		
-		writer.println("Get Hello " + userName + "!");
+		writer.println("Get Hello " + userName + "!" + " Session name " + session.getAttribute("username_session"));
 		
 		System.out.println("Hello XML Servlet");
 	}
