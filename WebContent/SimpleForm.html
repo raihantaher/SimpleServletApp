@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Input name</title>
+</head>
+<body>
+	<form action="XmlServletPath" method="post">
+		Username: <input type="text" name="username" />
+		Fullname: <input type="text" name="fullName" />
+		<br />
+		Profession: 
+		<input type="radio" name="prof" value="developer" /> Developer
+		<input type="radio" name="prof" value="software" /> Software
+		<select name="location" multiple>
+			<option value="here">Here</option>
+			<option value="there">There</option>
+			<option value="near">Near</option>
+			<option value="far">Far</option>
+			<option value="somewhere">Somewhere</option>
+		</select>
+		<input type="submit" value="Submit" />
+	</form>
+</body>
+</html>
